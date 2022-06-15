@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jirka.Snake.UI.WPF", "Jirka.Snake.UI.WPF\Jirka.Snake.UI.WPF.csproj", "{CCC45897-D1B1-4F02-AAAF-9492ED0B2F1C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E8D04E7A-8DF4-40C8-8FFD-8629DBAAB255} = {E8D04E7A-8DF4-40C8-8FFD-8629DBAAB255}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jirka.Snake.Logic", "Jirka.Snake.Domain\Jirka.Snake.Logic.csproj", "{E8D04E7A-8DF4-40C8-8FFD-8629DBAAB255}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCC45897-D1B1-4F02-AAAF-9492ED0B2F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC45897-D1B1-4F02-AAAF-9492ED0B2F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC45897-D1B1-4F02-AAAF-9492ED0B2F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC45897-D1B1-4F02-AAAF-9492ED0B2F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D04E7A-8DF4-40C8-8FFD-8629DBAAB255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D04E7A-8DF4-40C8-8FFD-8629DBAAB255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D04E7A-8DF4-40C8-8FFD-8629DBAAB255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D04E7A-8DF4-40C8-8FFD-8629DBAAB255}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81DFFD61-1EA0-4204-8540-711F3190BB72}
+	EndGlobalSection
+EndGlobal
