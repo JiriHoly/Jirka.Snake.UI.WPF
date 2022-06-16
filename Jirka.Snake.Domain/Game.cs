@@ -49,10 +49,12 @@ namespace Jirka.Snake.Logic
             snake = new Snake(tempPoint);
             if (tempPoint == null) throw new ArgumentException("No valid location of the snake");
             tempPoint.Status = PointStatus.Snake;
+            CreateFood();
         }
 
         public void MoveSnake()
         {
+            if (directoryToMove == Direction.Null) return;
 
             Point pointOfHead = snake.GetHead();
             bool wasFood = false;
@@ -76,11 +78,10 @@ namespace Jirka.Snake.Logic
             if(wasFood)
             {
                 CreateFood();
-                
             }
         }
 
-        private void CreateFood()
+        public void CreateFood()
         {
             List<Point> tempPoints = Points.FindAll(x => x.Status == PointStatus.Empty);
             Random random = new Random();
