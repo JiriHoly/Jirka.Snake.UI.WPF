@@ -20,15 +20,16 @@
         /// <returns>True if new point is a food</returns>
         public bool Move(Point point, Enums.Direction direction)
         {
-            if (point.Status != Enums.PointStatus.Food)
+            bool isFood = (point.Status == Enums.PointStatus.Food);
+            if (!isFood)
             {
                 Points.Dequeue().Status = Enums.PointStatus.Empty;
-                return false;
             }
+
             point.Status = Enums.PointStatus.Snake;
             Points.Enqueue(point);
             previousDirection = direction;
-            return true;
+            return isFood;
         }
 
         public bool IsValisDirection(Enums.Direction direction)
@@ -40,7 +41,7 @@
 
         public Point GetHead()
         {
-            return Points.Peek();
+            return Points.Last();
         }
     }
 }
