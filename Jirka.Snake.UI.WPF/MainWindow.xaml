@@ -38,9 +38,9 @@
                 <Label Content="Hráč: " HorizontalAlignment="Left" Margin="10,-6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,0.276"/>
                 <Label Content="Skóre:" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,0.276"/>
                 <Label Content="Nejlepší skóre:" HorizontalAlignment="Left" Margin="163,-6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,0.276"/>
-                <Label Content="0" HorizontalAlignment="Left" Margin="198,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,0.276" HorizontalContentAlignment="Left"/>
-                <Label Content="0" HorizontalAlignment="Left" Margin="50,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,0.276" HorizontalContentAlignment="Left"/>
-                <Label Content="Neznámý" HorizontalAlignment="Left" Margin="50,-6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,0.276" HorizontalContentAlignment="Left"/>
+                <Label Name="LabelBestScore" Content="0" HorizontalAlignment="Left" Margin="198,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,0.276" HorizontalContentAlignment="Left"/>
+                <Label Name="LabelScore" Content="0" HorizontalAlignment="Left" Margin="50,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,0.276" HorizontalContentAlignment="Left"/>
+                <Label Name="LabelPlayer" Content="Neznámý" HorizontalAlignment="Left" Margin="50,-6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,0.276" HorizontalContentAlignment="Left"/>
             </Grid>
 
         </Border>

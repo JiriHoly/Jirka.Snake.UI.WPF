@@ -55,8 +55,24 @@ namespace Jirka.Snake.UI.WPF
 
         private void GameTimer_Tick(object sender, EventArgs e)
         {
-            
-            game.MoveSnake();
+            try
+            {
+                game.MoveSnake();
+            } catch (ArgumentOutOfRangeException)
+            {
+                GameTimer.Stop();
+                MessageBox.Show($"Narazili jste do zdi! Vaše skore je {game.player.Score}");
+            }
+            catch 
+            {
+                GameTimer.Stop();
+                MessageBox.Show($"Narazili jste! Vaše skore je {game.player.Score}");
+            }
+
+
+            LabelScore.Content = game.player.Score.ToString();
+            LabelBestScore.Content = game.player.BestScore.ToString();
+            LabelPlayer.Content = game.player.Name;
             renderer.RenderGrid(game.Points);
             
         }
@@ -77,7 +93,7 @@ namespace Jirka.Snake.UI.WPF
                 case Key.Right:
                     game.ChangeActuallDirection(Logic.Enums.Direction.Right);
                     break;
-            }
+            } 
         }
     }
 }

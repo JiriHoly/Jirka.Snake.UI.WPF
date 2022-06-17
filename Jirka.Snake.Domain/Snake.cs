@@ -21,6 +21,17 @@
         public bool Move(Point point, Enums.Direction direction)
         {
             bool isFood = (point.Status == Enums.PointStatus.Food);
+
+            switch (point.Status)
+            {
+                case Enums.PointStatus.Barrier:
+                    throw new Exception();
+                case Enums.PointStatus.Snake:
+                    throw new Exception();
+
+            }
+
+            
             if (!isFood)
             {
                 Points.Dequeue().Status = Enums.PointStatus.Empty;

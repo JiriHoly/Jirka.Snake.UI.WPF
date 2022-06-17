@@ -18,7 +18,7 @@ namespace Jirka.Snake.Logic.Enums
 
     public enum PointStatus
     {
-        Empty = 0, Food = 1, Snake = 2
+        Empty = 0, Food = 1, Snake = 2, Barrier = 3
     }
 
     public enum Direction
