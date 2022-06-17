@@ -43,7 +43,6 @@ namespace Jirka.Snake.UI.WPF
             renderer = new Renderer(GameGrid, ((int)game.SizeOfTheGame));
 
             
-            // renderer.RenderGrid(game.Points);
 
             GameTimer = new DispatcherTimer
             {
@@ -56,7 +55,7 @@ namespace Jirka.Snake.UI.WPF
 
         private void GameTimer_Tick(object sender, EventArgs e)
         {
-            Thread.
+            
             game.MoveSnake();
             renderer.RenderGrid(game.Points);
             

@@ -41,7 +41,7 @@
 
         public Point GetHead()
         {
-            return Points.Peek();
+            return Points.Last();
         }
     }
 }
