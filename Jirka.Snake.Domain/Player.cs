@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Jirka.Snake.Logic
 {
-    internal class Player
+    [Serializable()]
+    public class Player
     {
         public string Name { get; private set; }
         public int BestScore { get; private set; }
+        public int Score { get; private set; }
 
         public Player(string name)
         {
@@ -17,9 +19,18 @@ namespace Jirka.Snake.Logic
             this.BestScore = 0;
         }
 
-        public void AddScore()
+        public Player(string name, int bestScore)
         {
-            this.BestScore++;
+            this.Name = name;
+            this.BestScore = bestScore;
         }
+
+        public void AddScore(int score)
+        {
+            this.Score += score;
+            if (this.Score > this.BestScore) this.BestScore = this.Score;
+        }
+
+
     }
 }

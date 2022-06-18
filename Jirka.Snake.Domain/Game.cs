@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Jirka.Snake.Logic.Enums;
+using Xceed.Wpf.Toolkit;
 //using System.Random;
 
 namespace Jirka.Snake.Logic
@@ -22,6 +24,7 @@ namespace Jirka.Snake.Logic
 
         public Direction directoryToMove;
         private Snake snake;
+        public Player player;
         public List<Point> Points { get; set; } 
 
         public Game(int LevelOfTheGame, SizeOfTheGame SizeOfTheGame, SpeedOfTheGame SpeedOfTheGame)
@@ -45,7 +48,8 @@ namespace Jirka.Snake.Logic
                 }
             }
 
-            var tempPoint = Points.Find(x => x.X == 10 && x.Y == 10);
+            player = new Player("Jirka");
+            var tempPoint = Points.Find(x => x.X == 2 && x.Y == 2);
             snake = new Snake(tempPoint);
             if (tempPoint == null) throw new ArgumentException("No valid location of the snake");
             tempPoint.Status = PointStatus.Snake;
@@ -55,28 +59,34 @@ namespace Jirka.Snake.Logic
         public void MoveSnake()
         {
             if (directoryToMove == Direction.Null) return;
+            
 
             Point pointOfHead = snake.GetHead();
             bool wasFood = false;
-            
+
             switch (directoryToMove)
             {
                 case Direction.Up:
-                    wasFood = snake.Move(Points[Points.FindIndex(x => x.X == pointOfHead.X - 1 && x.Y == pointOfHead.Y )], Direction.Up);
+                    if (pointOfHead.X == 0) throw new ArgumentOutOfRangeException();
+                    wasFood = snake.Move(Points[Points.FindIndex(x => x.X == pointOfHead.X - 1 && x.Y == pointOfHead.Y)], Direction.Up);
                     break;
                 case Direction.Down:
+                    if (pointOfHead.X == ((int)SizeOfTheGame - 1)) throw new ArgumentOutOfRangeException();
                     wasFood = snake.Move(Points[Points.FindIndex(x => x.X == pointOfHead.X + 1 && x.Y == pointOfHead.Y )], Direction.Down);
                     break;
                 case Direction.Left:
+                    if (pointOfHead.Y == 0) throw new ArgumentOutOfRangeException();
                     wasFood = snake.Move(Points[Points.FindIndex(x => x.X == pointOfHead.X  && x.Y == pointOfHead.Y - 1)], Direction.Left);
                     break;
                 case Direction.Right:
+                    if (pointOfHead.Y == ((int)SizeOfTheGame - 1)) throw new ArgumentOutOfRangeException();
                     wasFood = snake.Move(Points[Points.FindIndex(x => x.X == pointOfHead.X  && x.Y == pointOfHead.Y + 1)], Direction.Right);
                     break;
             }
 
             if(wasFood)
             {
+                PlusScore();
                 CreateFood();
             }
         }
@@ -96,6 +106,15 @@ namespace Jirka.Snake.Logic
                 directoryToMove = direction;
         }
         
+        public void SnakeCrash()
+        {
+            
+        }
+
+        public void PlusScore()
+        {
+            player.AddScore(1);
+        }
 
     }
 }
