@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Jirka.Snake.Logic
 {
+    [Serializable()]
     public class Player
     {
         public string Name { get; private set; }

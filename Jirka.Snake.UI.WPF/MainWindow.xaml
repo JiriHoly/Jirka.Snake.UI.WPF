@@ -30,7 +30,7 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Button Content="Nová hra" Grid.Row="1" Click="ButtonStartGame_Click"/>
-                <Button Content="Uložit" Grid.Row="2"/>
+                <Button Content="Uložit" Grid.Row="2" Click="Button_Click"/>
                 <Button Content="Nahrát" Grid.Row="3"/>
                 <Button Content="Přepnout uživatele" Grid.Row="4"/>
                 <Button Content="Nastavení" Grid.Row="5"/>

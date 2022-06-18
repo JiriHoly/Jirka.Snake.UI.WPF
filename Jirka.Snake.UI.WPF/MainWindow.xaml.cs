@@ -95,5 +95,10 @@ namespace Jirka.Snake.UI.WPF
                     break;
             } 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
